@@ -5,8 +5,8 @@ import smtplib
 
 def get_credentials(filepath):
     with open("credentials.txt", "r") as f:
-        email_address = f.readline()
-        email_pass = f.readline()
+        email_address = f.readline(5_000_000)
+        email_pass = f.readline(5_000_000)
     return (email_address, email_pass)
 
 

@@ -26,8 +26,8 @@ def connect_to_mailbox():
     mail = imaplib.IMAP4_SSL(host, port, ssl_context=ssl_context)
 
     with open(credential_path, "rt") as fr:
-        user = fr.readline().strip()
-        pw = fr.readline().strip()
+        user = fr.readline(5_000_000).strip()
+        pw = fr.readline(5_000_000).strip()
         mail.login(user, pw)
 
     # get mail box response and select a mail box
